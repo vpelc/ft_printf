@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 18:06:01 by vpelc             #+#    #+#             */
-/*   Updated: 2024/05/23 16:52:09 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/05/28 15:57:22 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,34 @@ int	ft_printf_hex(unsigned int x, char c)
 		}
 	}
 	return (count_hex(x));
+}
+
+static void	convert_hex(unsigned long long p)
+{
+	char	*base;
+
+	base = "0123456789abcdef";
+	if (p >= 16)
+	{
+		convert_hex(p / 16);
+	}
+	ft_putchar_nb(base[p % 16]);
+}
+
+int	ft_printf_ptr(unsigned long long p)
+{
+	int	count;
+
+	count = 0;
+	ft_putstr("0x");
+	count += 2;
+	convert_hex(p);
+	if (p == 0)
+		count++;
+	while (p > 0)
+	{
+		count++;
+		p /= 16;
+	}
+	return (count);
 }

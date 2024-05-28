@@ -6,7 +6,7 @@
 #    By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/08 11:09:54 by vpelc             #+#    #+#              #
-#    Updated: 2024/05/21 18:44:38 by vpelc            ###   ########.fr        #
+#    Updated: 2024/05/28 15:58:11 by vpelc            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ RM = rm -f
 
 CFLAGS = -Wall -Wextra -Werror
 
-SOURCE = printf printf_char printf_hex printf_str printf_int printf_uint printf_ptr printf_utils printf_flag_bonus
+SOURCE = printf printf_hex printf_str_nbr printf_utils printf_flag_bonus
 
 SOURCES = $(addsuffix .c, ${SOURCE})
 
