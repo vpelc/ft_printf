@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:24:19 by vpelc             #+#    #+#             */
-/*   Updated: 2024/05/28 15:22:51 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/05/30 15:27:54 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,13 +79,13 @@ int	ft_printf(const char *str, ...)
 #include <stdio.h>
 #include <limits.h>
 
-# define ARG " % d \n", 98
+# define ARG "%%%%\n" 
 
 int	main(void)
 {
 	int r1 = ft_printf(ARG);
 	int r2 = printf(ARG);
 
-	printf("\nr1 = %d, r2 = %d\n", r1, r2);
+	printf("\nmine = %d, origin = %d\n", r1, r2);
 	return (0);
 }*/
