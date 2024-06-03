@@ -6,7 +6,7 @@
 #    By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/08 11:09:54 by vpelc             #+#    #+#              #
-#    Updated: 2024/05/28 15:58:11 by vpelc            ###   ########.fr        #
+#    Updated: 2024/06/03 19:16:34 by vpelc            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ OBJECTS = ${SOURCES:.c=.o}
 
 all:	${NAME} 
 
-bonus : all
+bonus : ${NAME}
 
 .c.o:
 		${CC} ${CFLAGS} -I ./ -c $< -o ${<:.c=.o}

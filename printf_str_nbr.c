@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 14:28:49 by vpelc             #+#    #+#             */
-/*   Updated: 2024/05/30 15:28:29 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/06/03 19:02:55 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,37 +60,32 @@ int	ft_printf_int(int i)
 	return (count);
 }
 
-static void	ft_put_unbr(int n)
+static void	ft_put_unbr(unsigned int n)
 {
-	unsigned long	l;
-
-	l = n;
-	if (l >= 10)
+	if (n >= 10)
 	{
-		ft_put_unbr(l / 10);
-		ft_putchar_nb(l % 10 + 48);
+		ft_put_unbr(n / 10);
+		ft_putchar_nb(n % 10 + 48);
 	}
-	if (l < 10)
-		ft_putchar_nb(l % 10 + 48);
+	if (n < 10)
+		ft_putchar_nb(n % 10 + 48);
 }
 
 int	ft_printf_uint(unsigned int i)
 {
-	unsigned int	j;
-	int				count;
+	int	count;
 
 	count = 0;
-	j = i;
 	ft_put_unbr(i);
 	if (i == 0)
 	{
 		count++;
 		return (count);
 	}
-	while (j != 0)
+	while (i != 0)
 	{
 		count++;
-		j /= 10;
+		i /= 10;
 	}
 	return (count);
 }

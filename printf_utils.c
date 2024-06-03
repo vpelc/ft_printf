@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 14:39:24 by vpelc             #+#    #+#             */
-/*   Updated: 2024/05/23 16:52:32 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/06/03 16:28:51 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@ size_t	ft_strlen(char *c)
 	size_t	i;
 
 	i = 0;
-	if (!c)
-		return (0);
-	while (c[i])
+	while (c && c[i])
 		i++;
 	return (i);
 }
@@ -29,7 +27,7 @@ void	ft_putstr(char *s)
 	size_t	i;
 
 	i = 0;
-	while (s[i])
+	while (s && s[i])
 	{
 		ft_putchar_nb(s[i]);
 		i++;

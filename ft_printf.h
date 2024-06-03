@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 22:05:07 by vpelc             #+#    #+#             */
-/*   Updated: 2024/05/23 16:51:37 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/06/03 16:28:02 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_PRINTF_H
 # include <stdarg.h>
 # include <unistd.h>
+# include <stdio.h>
 
 size_t	ft_strlen(char *c);
 void	ft_putchar_nb(char c);

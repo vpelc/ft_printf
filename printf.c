@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:24:19 by vpelc             #+#    #+#             */
-/*   Updated: 2024/05/30 15:27:54 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/06/03 18:43:28 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	ft_check_exception(va_list args, char c1, char c2)
 	return (va_end(argscopy), 0);
 }
 
-static int	ft_check_arg(va_list args, const char s, int count)
+static int	ft_print_arg(va_list args, const char s, int count)
 {
 	if (s == 'c')
 		count += ft_printf_char(va_arg(args, int));
@@ -67,7 +67,7 @@ int	ft_printf(const char *str, ...)
 				i++;
 			if (ft_check_exception(args, str[i], str[i + 1]))
 				count--;
-			count = ft_check_arg(args, str[i + 1], count);
+			count = ft_print_arg(args, str[i + 1], count);
 			i++;
 		}
 		else if (str[i] != '%')
@@ -75,17 +75,4 @@ int	ft_printf(const char *str, ...)
 	}
 	return (va_end(args), count);
 }
-/*
-#include <stdio.h>
-#include <limits.h>
 
-# define ARG "%%%%\n" 
-
-int	main(void)
-{
-	int r1 = ft_printf(ARG);
-	int r2 = printf(ARG);
-
-	printf("\nmine = %d, origin = %d\n", r1, r2);
-	return (0);
-}*/
