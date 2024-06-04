@@ -6,7 +6,7 @@
 /*   By: vpelc <vpelc@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:24:19 by vpelc             #+#    #+#             */
-/*   Updated: 2024/06/03 19:22:08 by vpelc            ###   ########.fr       */
+/*   Updated: 2024/06/04 16:59:27 by vpelc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,3 +75,17 @@ int	ft_printf(const char *str, ...)
 	}
 	return (va_end(args), count);
 }
+
+/*  #include <stdio.h>
+#include <limits.h>
+
+# define ARG "%u\n", 4294967295u
+
+int	main(void)
+{
+	int r1 = ft_printf(ARG);
+	int r2 = printf(ARG);
+
+	printf("\nmine = %d, origin = %d\n", r1, r2);
+	return (0);
+}  */
